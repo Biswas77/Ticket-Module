@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRM Ticket Module</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #dbeafe, #eff6ff);
+        }
+
+        .navbar {
+            background: #0d6efd;
+            padding: 18px 30px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 80px auto;
+            background: #ffffff;
+            padding: 45px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #0d47a1;
+        }
+
+        p {
+            font-size: 17px;
+            margin: 15px 0 28px 0;
+            color: #444;
+        }
+
+        .btn-box {
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px;
+            padding: 14px 35px;
+            font-size: 17px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+
+        .login-btn {
+            background: #0d6efd;
+        }
+
+        .login-btn:hover {
+            background: #084ebc;
+        }
+
+        .register-btn {
+            background: #198754;
+        }
+
+        .register-btn:hover {
+            background: #146c43;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #555;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    CRM Ticket Module
+</div>
+
+<div class="container">
+    <h1>Welcome to CRM Ticket Management System</h1>
+    <p>
+        A simple and efficient ticketing solution for managing issues, tasks, and assignments.
+        Please login or create an account to continue.
+    </p>
+
+    <div class="btn-box">
+        <a href="public/auth_login.php" class="btn login-btn">Login</a>
+        <a href="public/auth_register.php" class="btn register-btn">Register</a>
+    </div>
+</div>
+
+<footer>
+    © 2025 CRM Ticket Module | Designed for Internship Project
+</footer>
+
+</body>
+</html>
