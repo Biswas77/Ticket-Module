@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS crm_ticket;
+USE crm_ticket;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(150) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  role ENUM('user','admin') DEFAULT 'user',
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE tickets (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  status ENUM('pending','inprogress','completed','onhold') DEFAULT 'pending',
+  file_path VARCHAR(255) DEFAULT NULL,
+  author_id INT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  completed_at DATETIME DEFAULT NULL,
+  deleted_at DATETIME DEFAULT NULL,
+  FOREIGN KEY (author_id) REFERENCES users(id)
+);
+
+CREATE TABLE ticket_assignments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  ticket_id INT NOT NULL,
+  assignee_id INT NOT NULL,
+  assigned_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (ticket_id) REFERENCES tickets(id),
+  FOREIGN KEY (assignee_id) REFERENCES users(id)
+);
